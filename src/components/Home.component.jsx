@@ -12,3 +12,9 @@ export const Home = () => {
     </div>
   )
 }
+
+const Products = () => {
+  <main>
+
+  </main>
+}

@@ -6,14 +6,14 @@ import { Carousel } from 'react-responsive-carousel';
 export const Carousell = () => {
   return (
     <div className='h-screen grid content-evenly'>
-      <div className='h-[500px] bg-slate-500'></div>
+      <div className='h-[500px] bg-mainBanner bg-cover bg-left-bottom'></div>
       <Carousel autoPlay infiniteLoop stopOnHover swipeable showStatus={false} showIndicators={false}>
-        <div className='h-[500px] bg-[#93E349]'>
+        <div className='h-[500px] bg-banner1 bg-cover'>
         </div>
-        <div className='h-[500px] bg-[#E059F0]'>
+        <div className='h-[500px] bg-banner2 bg-cover bg-bottom'>
         </div>
-        <div className='h-[500px] bg-[#695CFA]'>
-        </div>
+        {/* <div className='h-[500px] bg-[#695CFA]'>
+        </div> */}
       </Carousel>
     </div>
   )
