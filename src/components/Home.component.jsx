@@ -6,11 +6,9 @@ import { Nav } from './Nav.component'
 
 export const Home = () => {
   return (
-    <div className='h-full w-full p-12'>
-      {/* <Cover /> */}
-      <Carousell />
+    <div className='h-full w-full px-12'>
       <Nav />
-      {/* <Carousell /> */}
+      <Carousell />
     </div>
   )
 }
