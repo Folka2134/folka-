@@ -1,3 +1,8 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@font-face {
+  font-family: 'TABLOID';
+  src: url("../public/fonts/TabloidScuzzball-EDMl.ttf")
+}
