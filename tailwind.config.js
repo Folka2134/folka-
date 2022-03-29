@@ -5,7 +5,8 @@ module.exports = {
   theme: {
     extend: {
       backgroundImage: {
-        "main": "url('images/1633867537922.jpg')"
+        "main": "url('images/1633867537922.jpg')",
+        "sidebar1": "url('images/-folka-.png')"
       },
       fontFamily: {
         tabloid: ["TABLOID"]
