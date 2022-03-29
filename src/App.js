@@ -12,7 +12,7 @@ const App = () => {
     <main class="flex flex-col h-screen">
       <div class="flex flex-1 overflow-hidden ">
         <div class="flex flex-col bg-yellow-500 w-[250px] bg-sidebar1 bg-center justify-end">
-          <div className="h-44 bg-black">test</div>
+          <div className="h-[250px] bg-logo2 bg-contain bg-no-repeat">test</div>
         </div>
         <div class="flex flex-1 flex-col">
           <div class="flex flex-col  bg-main bg-cover bg-fixed overflow-y-auto paragraph">
