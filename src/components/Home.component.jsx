@@ -5,9 +5,9 @@ import { Nav } from './Nav.component'
 
 export const Home = () => {
   return (
-    <div>
-      <Nav />
+    <div className='h-screen w-full'>
       <Cover />
+      <Nav />
     </div>
   )
 }
