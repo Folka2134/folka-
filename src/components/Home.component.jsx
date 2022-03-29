@@ -1,14 +1,14 @@
 import React from 'react'
-import { Carousel } from './Carousel'
+import { Carousell } from './Carousel'
 
 // import { Cover } from './Cover.component'
 import { Nav } from './Nav.component'
 
 export const Home = () => {
   return (
-    <div className='h-screen w-full'>
+    <div className='h-screen w-full p-12'>
       {/* <Cover /> */}
-      <Carousel />
+      <Carousell />
       <Nav />
     </div>
   )
