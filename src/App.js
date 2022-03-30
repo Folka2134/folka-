@@ -1,5 +1,9 @@
 import { Home } from "./components/Home.component";
 
+import { AiFillInstagram } from 'react-icons/ai'
+import { AiFillFacebook } from 'react-icons/ai'
+import { BsSnapchat } from 'react-icons/bs'
+
 
 
 const App = () => {
@@ -26,8 +30,17 @@ const App = () => {
             <ul></ul>
           </div>
           <div className="h-[250px] bg-black text-[#FFB433] font-tabloid text-center">
-            <h2 className="bg-[#FFB433] text-black text-3xl">-folka- 2022©</h2>
+            <div>
+              <h2 className="bg-[#FFB433] text-black text-3xl">-folka- 2022©</h2>
+              {/* <div class="text-3xl animate-shimmer bg-gradient-to-r from-gray-900 via-gray-800 to-gray-900 bg-[length:400%_100%] rounded-lg">-folka- 2022©</div> */}
+
+            </div>
             Contanct: folka2134@gmail.com
+            <div className="flex grid-cols-2 justify-center transition-all">
+              <AiFillInstagram size={55} className="cursor-pointer hover:text-white duration-500" />
+              <AiFillFacebook size={55} className="cursor-pointer hover:text-white duration-500" />
+              <BsSnapchat size={50} className="cursor-pointer hover:text-white duration-500" />
+            </div>
           </div>
         </div>
       </div>

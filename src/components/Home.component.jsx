@@ -3,6 +3,7 @@ import { Carousell } from './Carousel'
 
 // import { Cover } from './Cover.component'
 import { Nav } from './Nav.component'
+import { Products } from './Products'
 
 export const Home = () => {
   return (
@@ -14,27 +15,3 @@ export const Home = () => {
   )
 }
 
-const Products = () => {
-  return (
-    <main className='h-screen bg-slate-500 m-20'>
-      <div className='h-full grid grid-cols-4 grid-rows-4 gap-4'>
-        <div className='border-2'>1</div>
-        <div className='border-2'>1</div>
-        <div className='border-2'>1</div>
-        <div className='border-2'>1</div>
-        <div className='border-2'>1</div>
-        <div className='border-2'>1</div>
-        <div className='border-2'>1</div>
-        <div className='border-2'>1</div>
-        <div className='border-2'>1</div>
-        <div className='border-2'>1</div>
-        <div className='border-2'>1</div>
-        <div className='border-2'>1</div>
-        <div className='border-2'>1</div>
-        <div className='border-2'>1</div>
-        <div className='border-2'>1</div>
-        <div className='border-2'>1</div>
-      </div>
-    </main>
-  )
-}
