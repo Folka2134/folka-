@@ -20,7 +20,7 @@ const App = () => {
           </div>
         </div>
         <div class="bg-black w-[250px] flex flex-col justify-between">
-          <div className="h-[250px] bg-logo2yellow bg-contain bg-no-repeat"></div>
+          <div className="h-[250px] bg-logo2yellow bg-contain bg-no-repeat animate-pulse-slow"></div>
           <div className="h-[500px] bg-black bg-opacity-80 flex justify-center text-[#FFB433] font-tabloid border-2 border-[#FFB433] m-5">
             <h1 className="text-6xl">Socials</h1>
             <ul></ul>

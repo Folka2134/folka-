@@ -17,6 +17,9 @@ module.exports = {
       },
       fontFamily: {
         tabloid: ["TABLOID"]
+      },
+      animation: {
+        'pulse-slow': 'pulse 6s linear infinite',
       }
     },
   },
