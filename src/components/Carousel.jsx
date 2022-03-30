@@ -6,7 +6,7 @@ import { Carousel } from 'react-responsive-carousel';
 export const Carousell = () => {
   return (
     <div className='h-screen grid content-evenly'>
-      <div className='h-[500px] bg-mainBanner bg-top bg-black rounded-xl border-2 border-black flex flex-col justify-center'>
+      <div className='h-[500px] bg-mainBanner bg-top bg-black rounded-xl border-2 border-black flex flex-col justify-center p-6'>
         <div className='text-center text-9xl text-[#FFB433] font-tabloid'>
           <h1 className='overline '>Sale</h1>
           <h2 className='underline'>23-26 feb</h2>
