@@ -12,6 +12,7 @@ import { BsSnapchat } from 'react-icons/bs'
 
 const App = () => {
   const [products, setProducts] = useState([])
+  const [cart, setCart] = useState({})
 
   const fetchProducts = async () => {
     const { data } = await commerce.products.list()
@@ -19,9 +20,23 @@ const App = () => {
     setProducts(data)
   }
 
+  const fetchCart = async () => {
+    const cart = await commerce.cart.retrieve()
+
+    setCart(cart)
+  }
+
+  const handleAddToCart = async (productId, quantity) => {
+    const item = await commerce.cart.add(productId, quantity)
+    setCart(item.cart)
+  }
+
   useEffect(() => {
     fetchProducts()
+    fetchCart()
   }, []);
+
+  console.log(cart);
 
   return (
     // <div className="h-screen flex flex-col bg-purple-400">
@@ -36,7 +51,7 @@ const App = () => {
         </div>
         <div className="flex flex-1 flex-col">
           <div className="flex flex-col bg-main bg-cover bg-fixed overflow-y-auto paragraph">
-            <Home products={products}/>
+            <Home products={products} handleAddToCart={handleAddToCart}/>
           </div>
         </div>
         <div className="bg-black w-[250px] flex flex-col justify-between">

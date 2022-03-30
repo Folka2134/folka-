@@ -8,15 +8,14 @@ const productsData = [
   { id: 3, name: 'Shirt', description: 'Blue Shirt', price: '£25', image: 'https://images.houseoffraser.co.uk/images/products/55505722_4pl.jpg' },
 ]
 
-export const Products = ({ products }) => {
+export const Products = ({ products, handleAddToCart }) => {
   return (
     <main>
       <Grid container justifyContent="center" spacing={4}>
         {products.map((product) => (
           <Grid item key={product.id} xs={12} sm={6} md={4} lg={3}>
-            <Product product={product} />
+            <Product product={product} handleAddToCart={handleAddToCart} />
           </Grid>))}
-        )
       </Grid>
     </main>
   )
