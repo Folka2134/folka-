@@ -3,7 +3,7 @@ import { Carousell } from './Carousel'
 
 // import { Cover } from './Cover.component'
 import { Nav } from './Nav.component'
-import { Products } from './Products'
+import { Products } from './Product/Products.component'
 
 export const Home = () => {
   return (

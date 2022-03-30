@@ -5,7 +5,7 @@ import { Carousel } from 'react-responsive-carousel';
 
 export const Carousell = () => {
   return (
-    <div className='h-[500px] mt-36'>
+    <div className='h-screen mt-36'>
       <div className='h-[500px] bg-mainBanner bg-top bg-black rounded-xl border-2 border-black flex flex-col justify-center p-6 cursor-pointer'>
         <div className='text-center text-9xl text-[#FFB433] font-tabloid'>
           <div className='overline'>Sale</div>
