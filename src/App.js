@@ -4,9 +4,13 @@ import { commerce } from './lib/commerce'
 
 import { Home } from "./components/Home.component";
 
+import { Badge, IconButton } from '@material-ui/core';
+import { ShoppingCart } from '@material-ui/icons';
+
 import { AiFillInstagram } from 'react-icons/ai'
 import { AiFillFacebook } from 'react-icons/ai'
 import { BsSnapchat } from 'react-icons/bs'
+import { Cart } from './components/Cart/Cart';
 
 
 
@@ -36,8 +40,6 @@ const App = () => {
     fetchCart()
   }, []);
 
-  console.log(cart);
-
   return (
     // <div className="h-screen flex flex-col bg-purple-400">
     //   <div className="h-auto  bg-yellow-500 ">1</div>
@@ -46,7 +48,15 @@ const App = () => {
     // </div>
     <main className="flex flex-col h-screen">
       <div className="flex flex-1 overflow-hidden ">
-        <div className="bg-yellow-500 w-[250px] flex flex-col justify-end bg-sidebar1 bg-center border-2 border-black">
+        <div className="bg-yellow-500 w-[250px] flex flex-col justify-between bg-sidebar1 bg-center border-2 border-black">
+          <div className="bg-black w text-white bg-contain bg-no-repeat">
+            {/* <IconButton aria-label='Show cart items'>
+              <Badge badgeContent={cart.total_items}>
+                <ShoppingCart />
+              </Badge>
+            </IconButton> */}
+            <Cart cart={cart}/>
+          </div>
           <div className="h-[246px] bg-logo2invert bg-contain bg-no-repeat"></div>
         </div>
         <div className="flex flex-1 flex-col">
