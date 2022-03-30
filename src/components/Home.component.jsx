@@ -9,12 +9,32 @@ export const Home = () => {
     <div className='h-full w-full px-12'>
       <Nav />
       <Carousell />
+      <Products />
     </div>
   )
 }
 
 const Products = () => {
-  <main>
-
-  </main>
+  return (
+    <main className='h-screen bg-slate-500 m-20'>
+      <div className='h-full grid grid-cols-4 grid-rows-4 gap-4'>
+        <div className='border-2'>1</div>
+        <div className='border-2'>1</div>
+        <div className='border-2'>1</div>
+        <div className='border-2'>1</div>
+        <div className='border-2'>1</div>
+        <div className='border-2'>1</div>
+        <div className='border-2'>1</div>
+        <div className='border-2'>1</div>
+        <div className='border-2'>1</div>
+        <div className='border-2'>1</div>
+        <div className='border-2'>1</div>
+        <div className='border-2'>1</div>
+        <div className='border-2'>1</div>
+        <div className='border-2'>1</div>
+        <div className='border-2'>1</div>
+        <div className='border-2'>1</div>
+      </div>
+    </main>
+  )
 }
