@@ -1,3 +1,7 @@
+import React, { useState, useEffect } from 'react'
+
+import { commerce } from './lib/commerce'
+
 import { Home } from "./components/Home.component";
 
 import { AiFillInstagram } from 'react-icons/ai'
@@ -7,6 +11,20 @@ import { BsSnapchat } from 'react-icons/bs'
 
 
 const App = () => {
+  const [products, setProducts] = useState([])
+
+  const fetchProducts = async () => {
+    const { data } = await commerce.products.list()
+
+    setProducts(data)
+  }
+
+  useEffect(() => {
+    fetchProducts()
+  }, []);
+
+  console.log(products);
+
   return (
     // <div className="h-screen flex flex-col bg-purple-400">
     //   <div className="h-auto  bg-yellow-500 ">1</div>
