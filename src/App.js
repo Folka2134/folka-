@@ -49,13 +49,13 @@ const App = () => {
     <main className="flex flex-col h-screen">
       <div className="flex flex-1 overflow-hidden ">
         <div className="bg-yellow-500 w-[250px] flex flex-col justify-between bg-sidebar1 bg-center border-2 border-black">
-          <div className="bg-black w text-white bg-contain bg-no-repeat">
-            {/* <IconButton aria-label='Show cart items'>
-              <Badge badgeContent={cart.total_items}>
+          <div className="bg-black text-white bg-contain bg-no-repeat">
+            <IconButton aria-label='Show cart items' color="primary">
+              <Badge badgeContent={cart.total_items} color="secondary">
                 <ShoppingCart />
               </Badge>
-            </IconButton> */}
-            <Cart cart={cart}/>
+            </IconButton>
+            {/* <Cart cart={cart}/> */}
           </div>
           <div className="h-[246px] bg-logo2invert bg-contain bg-no-repeat"></div>
         </div>

@@ -1,4 +1,7 @@
 import React from 'react'
+
+import { CartItem } from './CartItem/CartItem'
+
 import { Container, Typography, Button, Grid } from '@material-ui/core'
 
 import { ImBin } from 'react-icons/im'
@@ -18,7 +21,7 @@ export const Cart = ({ cart }) => {
         {cart.line_items.map((item) => (
           <Grid item key={item.id}>
             {/* <CartItem /> */}
-            <div>{item.name}</div>
+            <CartItem item={item} />
           </Grid>
         ))}
       </Grid>
