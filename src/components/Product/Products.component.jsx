@@ -3,9 +3,9 @@ import React from 'react'
 import { Product } from './Product'
 
 const products = [
-  { id: 1, name: 'Shoes', description: 'Skate shoes', price: '£70' },
-  { id: 2, name: 'Macbook', description: 'Apple MacBook', price: '£100' },
-  { id: 3, name: 'Shirt', description: 'Blue Shirt', price: '£25' },
+  { id: 1, name: 'Shoes', description: 'Skate shoes', price: '£70', image: 'https://www.boardoftheworld.com/wp-content/uploads/2021/07/cariuma-catiba-pro-all-black-skate-shoe-1.jpg' },
+  { id: 2, name: 'Ikea Hat', description: 'Ikea Hat', price: '£100', image: 'https://www.ikea.com/us/en/images/products/knorva-hat-blue__0812162_pe771942_s5.jpg' },
+  { id: 3, name: 'Shirt', description: 'Blue Shirt', price: '£25', image: 'https://images.houseoffraser.co.uk/images/products/55505722_4pl.jpg' },
 ]
 
 export const Products = () => {
