@@ -5,12 +5,12 @@ import { Carousell } from './Carousel'
 import { Nav } from './Nav.component'
 import { Products } from './Product/Products.component'
 
-export const Home = () => {
+export const Home = ({ products }) => {
   return (
     <div className='h-screen w-full px-12'>
       <Nav />
       <Carousell />
-      <Products />
+      <Products products={products} />
     </div>
   )
 }

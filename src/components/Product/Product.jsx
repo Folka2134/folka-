@@ -3,20 +3,19 @@ import { Card, CardMedia, CardContent, CardActions, Typography, IconButton } fro
 import { AddShoppingCart, CallMissedSharp } from '@material-ui/icons'
 
 export const Product = ({ product }) => {
+
   return (
     <Card className='w-full'>
-      <CardMedia className='h-0 pt-[50.25%]' image={product.image} title={product.name} />
-      <CardContent>
+      <CardMedia className='h-0 pt-[50.25%]' image={product.image.url} title={product.name} />
+      <CardContent className='bg-black bg-opacity-90 text-white'>
         <div className=''>
           <Typography variant='h5' gutterBottom>
             {product.name}
           </Typography>
-          <Typography variant='h5'>
-            {product.price}
+          <Typography >
+            {product.price.formatted_with_symbol}
           </Typography>
-          <Typography variant='body2' color="textSecondary">
-            {product.description}
-          </Typography>
+          <Typography dangerouslySetInnerHTML={{ __html: product.description }} variant='body2' />
         </div>
       </CardContent>
       <CardActions disableSpacing className='flex justify-end'>
