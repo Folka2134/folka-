@@ -7,7 +7,7 @@ import { Products } from './Product/Products.component'
 
 export const Home = () => {
   return (
-    <div className='h-full w-full px-12'>
+    <div className='h-screen w-full px-12'>
       <Nav />
       <Carousell />
       <Products />
