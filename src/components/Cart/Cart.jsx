@@ -16,7 +16,7 @@ export const Cart = ({ cart }) => {
   )
 
   const FilledCart = () => (
-    <>
+    <div className='h-[700px] w-[250px] overflow-y-auto'>
       <Grid container spacing={2} className="flex-col justify-center pt-6">
         {cart.line_items.map((item) => (
           <Grid item key={item.id}>
@@ -34,7 +34,7 @@ export const Cart = ({ cart }) => {
           <Button className='min-w-[150px]' size="large" type="button" variant="contained"><CgEnter /></Button>
         </div>
       </div>
-    </>
+    </div>
   )
 
   if (!cart.line_items) return 'Loading...'

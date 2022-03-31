@@ -46,19 +46,19 @@ const App = () => {
 
         {/* Left Bar */}
         <div className="bg-yellow-500 bg-sidebar1 bg-center border-2 border-black h-56 row-span-1 lg:h-auto lg:w-[250px] lg:flex lg:flex-col lg:justify-between">
-          <div className="bg-black text-white bg-contain bg-no-repeat">
-            <IconButton aria-label='Show cart items' color="primary">
-              <Badge badgeContent={cart.total_items} color="secondary">
-                <ShoppingCart />
-              </Badge>
-            </IconButton>
-            {/* <Cart cart={cart}/> */}
-          </div>
           <div className="h-[246px] bg-logo2invert bg-contain bg-no-repeat hidden lg:block"></div>
         </div>
         
         {/* Main section */}
         <div className="flex flex-1 flex-col row-span-6">
+            <div className="bg-black text-white bg-contain bg-no-repeat absolute z-30 right-5 lg:right-72 ">
+              <IconButton aria-label='Show cart items' color="primary">
+                <Badge badgeContent={cart.total_items} color="secondary">
+                  <ShoppingCart />
+                </Badge>
+              </IconButton>
+              <Cart cart={cart}/>
+            </div>
           <div className="flex flex-col bg-main bg-cover bg-fixed overflow-y-auto paragraph">
             <Home products={products} handleAddToCart={handleAddToCart}/>
           </div>

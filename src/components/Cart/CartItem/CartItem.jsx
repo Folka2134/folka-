@@ -4,7 +4,7 @@ import { Typography, Button, Card, CardActions, CardContent, CardMedia } from '@
 export const CartItem = ({ item }) => {
   return (
     <Card>
-      <CardMedia image={item.url} alt={item.name} className="{media}" />
+      <CardMedia image={item.image.url} alt={item.name} className="{media}" />
       <CardContent className='{cardContent}'>
         <Typography>{item.name}</Typography>
         <Typography>{item.line_total.formatted_with_symbol}</Typography>
