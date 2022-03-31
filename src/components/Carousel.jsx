@@ -5,13 +5,13 @@ import { Carousel } from 'react-responsive-carousel';
 
 export const Carousell = () => {
   return (
-    <div className='h-[600px] mt-24 lg:mt-36'>
+    <div className='h-[600px] mt-24 lg:mt-36 '>
       <Carousel autoPlay infiniteLoop stopOnHover swipeable showStatus={false} showIndicators={false} interval={9000} transitionTime={2000} showThumbs={false}>
-        <div className='h-[500px] bg-banner1 bg-cover rounded-xl'>
+        <div className='h-[500px] bg-banner1 bg-cover rounded-xl border-2'>
         </div>
-        <div className='h-[500px] bg-banner2 bg-cover bg-bottom rounded-xl'>
+        <div className='h-[500px] bg-banner2 bg-cover bg-bottom rounded-xl border-2'>
         </div>
-        <div className='h-[500px] bg-banner3 bg-cover bg-bottom rounded-xl'>
+        <div className='h-[500px] bg-banner3 bg-cover bg-bottom rounded-xl border-2'>
         </div>
       </Carousel>
       {/* <div className='h-[500px] bg-mainBanner bg-top bg-black rounded-xl border-2 border-black flex flex-col justify-center p-6 cursor-pointer'>
