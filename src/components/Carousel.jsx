@@ -5,7 +5,7 @@ import { Carousel } from 'react-responsive-carousel';
 
 export const Carousell = () => {
   return (
-    <div className='h-[600px] mt-36'>
+    <div className='h-[600px] mt-24 lg:mt-36'>
       <Carousel autoPlay infiniteLoop stopOnHover swipeable showStatus={false} showIndicators={false} interval={9000} transitionTime={2000} showThumbs={false}>
         <div className='h-[500px] bg-banner1 bg-cover rounded-xl'>
         </div>

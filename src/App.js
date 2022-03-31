@@ -41,7 +41,7 @@ const App = () => {
   }, []);
 
   return (
-    <main className="flex flex-col h-screen">
+    <main className="flex flex-col h-screen min-w-[450px]">
       <div className="grid grid-cols-1 grid-rows-6 lg:flex lg:flex-1 overflow-hidden ">
 
         {/* Left Bar */}
@@ -67,7 +67,7 @@ const App = () => {
         {/* Right Bar */}
         <div className="bg-black h-32  lg:h-auto lg:w-[250px] lg:flex lg:flex-col lg:justify-between">
           <div className="hidden lg:block lg:h-[250px] bg-logo2yellow bg-contain bg-no-repeat animate-pulse-slow"></div>
-          <div className="lg:h-[500px] bg-black bg-opacity-80 lg:flex justify-center text-[#FFB433] font-tabloid border-2 border-[#FFB433] m-5 hidden">
+          <div className=" bg-black bg-opacity-80 text-[#FFB433] font-tabloid border-2 border-[#FFB433] m-5 hidden lg:h-[500px] lg:flex lg:justify-center">
             <h1 className="text-6xl">-</h1>
             <ul></ul>
           </div>
