@@ -3,7 +3,6 @@ import { Card, CardMedia, CardContent, CardActions, Typography, IconButton } fro
 import { AddShoppingCart, CallMissedSharp } from '@material-ui/icons'
 
 export const Product = ({ product, handleAddToCart }) => {
-
   return (
     <Card className='w-full'>
       <CardMedia className='h-0 pt-[50.25%]' image={product.image.url} title={product.name} />

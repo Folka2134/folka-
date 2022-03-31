@@ -11,9 +11,11 @@ const productsData = [
 export const Products = ({ products, handleAddToCart }) => {
   return (
     <main>
-      <Grid container justifyContent="center" spacing={4}>
+      <Grid container justifyContent="center" spacing={4}
+      // columns={{ xs: 2, sm: 1, md: 1 }}
+      >
         {products.map((product) => (
-          <Grid item key={product.id} xs={12} sm={6} md={4} lg={3}>
+          <Grid item key={product.id} xs={12} sm={12} md={6} lg={3}>
             <Product product={product} handleAddToCart={handleAddToCart} />
           </Grid>))}
       </Grid>
