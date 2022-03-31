@@ -41,14 +41,11 @@ const App = () => {
   }, []);
 
   return (
-    // <div className="h-screen flex flex-col bg-purple-400">
-    //   <div className="h-auto  bg-yellow-500 ">1</div>
-    //   <div className=""></div>
-    //   <div className="h-screen sticky left-0 bg-yellow-500">3</div>
-    // </div>
     <main className="flex flex-col h-screen">
-      <div className="flex flex-1 overflow-hidden">
-        <div className="bg-yellow-500 w-[250px] flex flex-col justify-between bg-sidebar1 bg-center border-2 border-black">
+      <div className="grid grid-cols-1 grid-rows-6 lg:flex lg:flex-1 overflow-hidden ">
+
+        {/* Left Bar */}
+        <div className="bg-yellow-500 bg-sidebar1 bg-center border-2 border-black h-56 row-span-1 lg:h-auto lg:w-[250px] lg:flex lg:flex-col lg:justify-between">
           <div className="bg-black text-white bg-contain bg-no-repeat">
             <IconButton aria-label='Show cart items' color="primary">
               <Badge badgeContent={cart.total_items} color="secondary">
@@ -57,20 +54,24 @@ const App = () => {
             </IconButton>
             {/* <Cart cart={cart}/> */}
           </div>
-          <div className="h-[246px] bg-logo2invert bg-contain bg-no-repeat"></div>
+          <div className="h-[246px] bg-logo2invert bg-contain bg-no-repeat hidden lg:block"></div>
         </div>
-        <div className="flex flex-1 flex-col">
+        
+        {/* Main section */}
+        <div className="flex flex-1 flex-col row-span-6">
           <div className="flex flex-col bg-main bg-cover bg-fixed overflow-y-auto paragraph">
             <Home products={products} handleAddToCart={handleAddToCart}/>
           </div>
         </div>
-        <div className="bg-black w-[250px] flex flex-col justify-between">
-          <div className="h-[250px] bg-logo2yellow bg-contain bg-no-repeat animate-pulse-slow"></div>
-          <div className="h-[500px] bg-black bg-opacity-80 flex justify-center text-[#FFB433] font-tabloid border-2 border-[#FFB433] m-5">
+
+        {/* Right Bar */}
+        <div className="bg-black h-32  lg:h-auto lg:w-[250px] lg:flex lg:flex-col lg:justify-between">
+          <div className="hidden lg:block lg:h-[250px] bg-logo2yellow bg-contain bg-no-repeat animate-pulse-slow"></div>
+          <div className="lg:h-[500px] bg-black bg-opacity-80 lg:flex justify-center text-[#FFB433] font-tabloid border-2 border-[#FFB433] m-5 hidden">
             <h1 className="text-6xl">-</h1>
             <ul></ul>
           </div>
-          <div className="h-[250px] bg-black text-[#FFB433] font-tabloid text-center">
+          <div className="md:h-[250px] bg-black text-[#FFB433] font-tabloid text-center">
             <div>
               <h2 className="bg-[#FFB433] text-black text-3xl">-folka- 2022©</h2>
               {/* <div class="text-3xl animate-shimmer bg-gradient-to-r from-gray-900 via-gray-800 to-gray-900 bg-[length:400%_100%] rounded-lg">-folka- 2022©</div> */}
