@@ -16,7 +16,7 @@ export const Cart = ({ cart }) => {
   )
 
   const FilledCart = () => (
-    <div className='h-[700px] w-[250px] overflow-y-auto'>
+    <div className='h-[400px] lg:h-[700px] w-[200px] overflow-y-auto'>
       <Grid container spacing={2} className="flex-col justify-center pt-6">
         {cart.line_items.map((item) => (
           <Grid item key={item.id}>
@@ -40,7 +40,7 @@ export const Cart = ({ cart }) => {
   if (!cart.line_items) return 'Loading...'
 
   return (
-    <Container className='font-tabloid'>
+    <Container className='font-tabloid mt-5'>
       <div className='h-full' />
       <Typography className='pt-2 text-center'>Your Shopping Cart</Typography>
       {isEmpty ? <EmptyCart /> : <FilledCart />}
