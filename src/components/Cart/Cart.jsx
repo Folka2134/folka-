@@ -20,7 +20,6 @@ export const Cart = ({ cart }) => {
       <Grid container spacing={2} className="flex-col justify-center pt-6">
         {cart.line_items.map((item) => (
           <Grid item key={item.id}>
-            {/* <CartItem /> */}
             <CartItem item={item} />
           </Grid>
         ))}
