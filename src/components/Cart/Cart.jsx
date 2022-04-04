@@ -16,7 +16,7 @@ export const Cart = ({ cart }) => {
   )
 
   const FilledCart = () => (
-    <div className='h-[400px] lg:h-[700px] w-[200px] overflow-y-auto'>
+    <div className='h-[400px] lg:h-[500px] w-[225px] overflow-y-auto'>
       <Grid container spacing={2} className="flex-col justify-center pt-6">
         {cart.line_items.map((item) => (
           <Grid item key={item.id}>
