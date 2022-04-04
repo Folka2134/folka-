@@ -39,8 +39,8 @@ export const Cart = ({ cart }) => {
   if (!cart.line_items) return 'Loading...'
 
   return (
-    <Container className='font-tabloid mt-5'>
-      <div className='h-full' />
+    <Container className='font-tabloid mt-12 absolute bg-black '>
+      {/* <div className='h-full' /> */}
       <Typography className='pt-2 text-center'>Your Shopping Cart</Typography>
       {isEmpty ? <EmptyCart /> : <FilledCart />}
     </Container>
