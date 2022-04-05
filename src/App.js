@@ -53,19 +53,19 @@ const App = () => {
     <main className="flex flex-col h-screen">
       <div className="grid grid-cols-1 grid-rows-6 lg:flex lg:flex-1 overflow-hidden ">
         <div className="bg-black flex justify-evenly w-[250px] text-white bg-contain bg-no-repeat absolute z-30 mt-5 lg:mt-0 right-5 lg:right-auto">
-          <div className='flex text-lg font-tabloid'>
-            <button className='px-5 hover:text-blue-600'>Account</button>
-            <button className='hover:text-blue-600'>Sign-Out</button>
-          </div>
-          <div>
-            <IconButton aria-label='Show cart items' color="primary" onClick={() => openCart()}>
-              <Badge badgeContent={cart.total_items} color="secondary">
-                <ShoppingCart />
-              </Badge>
-            </IconButton>
-          </div>
           <div className={activeCart ? '' : 'hidden'} >
             <Cart cart={cart} />
+          </div>
+          <div className='flex text-lg font-tabloid'>
+            <button className='pr-5 hover:text-blue-600'>Account</button>
+            <button className='hover:text-blue-600'>Sign-Out</button>
+            <div >
+              <IconButton aria-label='Show cart items' color="primary" onClick={() => openCart()}>
+                <Badge badgeContent={cart.total_items} color="secondary">
+                  <ShoppingCart />
+                </Badge>
+              </IconButton>
+            </div>
           </div>
         </div>
         {/* Left Bar */}
