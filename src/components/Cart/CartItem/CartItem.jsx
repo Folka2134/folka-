@@ -3,7 +3,7 @@ import { Typography, Button, Card, CardActions, CardContent, CardMedia } from '@
 
 import { ImBin } from 'react-icons/im'
 
-export const CartItem = ({ item }) => {
+export const CartItem = ({ item, handleRemoveFromCart, handleUpdateCartQty }) => {
   return (
     <Card className='w-[200px]'>
       <CardMedia image={item.image.url} alt={item.name} className="h-[100px] w-[200px]" />
@@ -13,11 +13,11 @@ export const CartItem = ({ item }) => {
       </CardContent>
       <CardActions className="flex justify-between">
         <div className='flex items-center'>
-          <Button type="button" size="small">-</Button>
+          <Button type="button" size="small" onClick={() => handleUpdateCartQty(item.id, item.quantity - 1)}>-</Button>
           <Typography>{item.quantity}</Typography>
-          <Button type="button" size="small">+</Button>
+          <Button type="button" size="small" onClick={() => handleUpdateCartQty(item.id, item.quantity + 1)}>+</Button>
         </div>
-        <Button type="button"><ImBin /></Button>
+        <Button type="button " onClick={() => handleRemoveFromCart(item.id)}><ImBin /></Button>
       </CardActions>
     </Card>
   )
