@@ -17,6 +17,7 @@ import { Cart } from './components/Cart/Cart';
 const App = () => {
   const [products, setProducts] = useState([])
   const [cart, setCart] = useState({})
+  const [activeCart, setActiveCart] = useState(false)
 
   const fetchProducts = async () => {
     const { data } = await commerce.products.list()
@@ -35,6 +36,14 @@ const App = () => {
     setCart(item.cart)
   }
 
+  const openCart = () => {
+    if (activeCart === false) {
+      setActiveCart(true)
+    } else {
+      setActiveCart(false)
+    }
+  }
+
   useEffect(() => {
     fetchProducts()
     fetchCart()
@@ -49,17 +58,19 @@ const App = () => {
             <button className='hover:text-blue-600'>Sign-Out</button>
           </div>
           <div>
-            <IconButton aria-label='Show cart items' color="primary">
+            <IconButton aria-label='Show cart items' color="primary" onClick={() => openCart()}>
               <Badge badgeContent={cart.total_items} color="secondary">
                 <ShoppingCart />
               </Badge>
             </IconButton>
           </div>
-          <Cart cart={cart} />
+          <div className={activeCart ? '' : 'hidden'} >
+            <Cart cart={cart} />
+          </div>
         </div>
         {/* Left Bar */}
         <div className="bg-yellow-500 bg-sidebar1 bg-center border-2 border-black h-56 row-span-1 lg:h-auto lg:w-[250px] lg:flex lg:flex-col lg:justify-end">
-          <div className="h-[246px] bg-logo2invert bg-contain bg-no-repeat hidden lg:block"></div>
+          <div className="min-h-[246px] bg-logo2invert bg-contain bg-no-repeat hidden lg:block"></div>
         </div>
 
         {/* Main section */}
@@ -71,7 +82,7 @@ const App = () => {
 
         {/* Right Bar */}
         <div className="bg-black h-32  lg:h-auto lg:w-[250px] lg:flex lg:flex-col lg:justify-between">
-          <div className="hidden lg:block lg:h-[250px] bg-logo2yellow bg-contain bg-no-repeat animate-pulse-slow"></div>
+          <div className="hidden lg:block lg:min-h-[246px] bg-logo2yellow bg-contain bg-no-repeat animate-pulse-slow"></div>
           <div className=" bg-black bg-opacity-80 text-[#FFB433] font-tabloid border-2 border-[#FFB433] m-5 hidden lg:h-[500px] lg:flex lg:justify-center">
             <h1 className="text-6xl">Events</h1>
             <ul></ul>
