@@ -7,9 +7,7 @@ import { Container, Typography, Button, Grid } from '@material-ui/core'
 import { ImBin } from 'react-icons/im'
 import { CgEnter } from 'react-icons/cg'
 
-export const Cart = ({ cart }) => {
-
-  // const isEmpty = !cart.total_items
+export const Cart = ({ cart, handleEmptyCart, handleRemoveFromCart, handleUpdateCartQty }) => {
 
   const EmptyCart = () => (
     <Typography variant='subtitle1'>You have no items in your shopping cart</Typography>
@@ -20,7 +18,7 @@ export const Cart = ({ cart }) => {
       <Grid container spacing={2} className="flex-col justify-center pt-6">
         {cart.line_items.map((item) => (
           <Grid item key={item.id}>
-            <CartItem item={item} />
+            <CartItem item={item} handleUpdateCartQty={handleUpdateCartQty} handleRemoveFromCart={handleRemoveFromCart} />
           </Grid>
         ))}
       </Grid>
@@ -29,14 +27,14 @@ export const Cart = ({ cart }) => {
           Subtotal {cart.subtotal.formatted_with_symbol}
         </Typography>
         <div className='flex justify-evenly m-2'>
-          <Button className='min-w-[150px]' size="large" type="button" variant="contained"><ImBin /></Button>
+          <Button className='min-w-[150px]' size="large" type="button" variant="contained"><ImBin onClick={handleEmptyCart} /></Button>
           <Button className='min-w-[150px]' size="large" type="button" variant="contained"><CgEnter /></Button>
         </div>
       </div>
     </div>
   )
 
-  if (!cart.line_items) return 'Loading...'
+  // if (!cart.line_items) return 'Empty Cart'
 
   return (
     <Container className='font-tabloid mt-12 absolute bg-black '>

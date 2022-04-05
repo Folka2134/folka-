@@ -36,6 +36,20 @@ const App = () => {
     setCart(item.cart)
   }
 
+  const handleUpdateCartQty = async (productId, quantity) => {
+    const cart = await commerce.cart.update(productId, { quantity })
+    setCart(cart)
+  }
+
+  const handleRemoveFromCart = async (productId) => {
+    const cart = await commerce.cart.remove(productId)
+    setCart(cart)
+  }
+  const handleEmptyCart = async (productId) => {
+    const cart = await commerce.cart.empty()
+    setCart(cart)
+  }
+
   const openCart = () => {
     if (activeCart === false) {
       setActiveCart(true)
@@ -54,7 +68,12 @@ const App = () => {
       <div className="grid grid-cols-1 grid-rows-6 lg:flex lg:flex-1 overflow-hidden ">
         <div className="bg-black flex justify-evenly w-[250px] text-white bg-contain bg-no-repeat absolute z-30 mt-5 lg:mt-0 right-5 lg:right-auto">
           <div className={activeCart ? '' : 'hidden'} >
-            <Cart cart={cart} />
+            <Cart
+              cart={cart}
+              handleEmptyCart={handleEmptyCart}
+              handleRemoveFromCart={handleRemoveFromCart}
+              handleUpdateCartQty={handleUpdateCartQty}
+            />
           </div>
           <div className='flex text-lg font-tabloid'>
             <button className='pr-5 hover:text-blue-600'>Account</button>
