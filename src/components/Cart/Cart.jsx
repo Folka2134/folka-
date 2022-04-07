@@ -34,7 +34,7 @@ export const Cart = ({ cart, handleEmptyCart, handleRemoveFromCart, handleUpdate
     </div>
   )
 
-  // if (!cart.line_items) return 'Empty Cart'
+  if (!cart.line_items) return 'Empty Cart'
 
   return (
     <Container className='font-tabloid mt-12 absolute bg-black '>
