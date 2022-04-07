@@ -10,11 +10,11 @@ import { CgEnter } from 'react-icons/cg'
 export const Cart = ({ cart, handleEmptyCart, handleRemoveFromCart, handleUpdateCartQty }) => {
 
   const EmptyCart = () => (
-    <Typography variant='subtitle1'>You have no items in your shopping cart</Typography>
+    <Typography variant='subtitle1' className='text-red-500 text-center pt-2'>You have no items in your shopping cart</Typography>
   )
 
   const FilledCart = () => (
-    <div className='h-[400px] lg:h-[500px] w-[225px] overflow-y-auto'>
+    <div className='h-[400px] lg:h-[500px] overflow-y-auto'>
       <Grid container spacing={2} className="flex-col justify-center pt-6">
         {cart.line_items.map((item) => (
           <Grid item key={item.id}>
@@ -34,13 +34,14 @@ export const Cart = ({ cart, handleEmptyCart, handleRemoveFromCart, handleUpdate
     </div>
   )
 
-  if (!cart.line_items) return 'Empty Cart'
+  // if (!cart.line_items) return 'Empty Cart'
 
   return (
-    <Container className='font-tabloid mt-12 absolute bg-black '>
+    <div className='font-tabloid mt-12 -ml-[217.5px] absolute bg-black w-[250px]'>
       {/* <div className='h-full' /> */}
-      <Typography className='pt-2 text-center'>Your Shopping Cart</Typography>
-      {!cart.total_items ? <EmptyCart /> : <FilledCart />}
-    </Container>
+      <Typography className='pt-2 text-center text-white' > Your Shopping Cart</Typography>
+      {!cart.total_items ? <EmptyCart /> : <FilledCart />
+      }
+    </div>
   )
 }

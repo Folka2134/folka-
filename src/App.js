@@ -45,7 +45,7 @@ const App = () => {
     const cart = await commerce.cart.remove(productId)
     setCart(cart.cart)
   }
-  const handleEmptyCart = async (productId) => {
+  const handleEmptyCart = async () => {
     const cart = await commerce.cart.empty()
     setCart(cart.cart)
   }
@@ -66,17 +66,16 @@ const App = () => {
   return (
     <main className="flex flex-col h-screen">
       <div className="grid grid-cols-1 grid-rows-6 lg:flex lg:flex-1 overflow-hidden ">
-
+        {/* <div className={activeCart ? '' : 'hidden'} >
+          <Cart
+            cart={cart}
+            handleEmptyCart={handleEmptyCart}
+            handleRemoveFromCart={handleRemoveFromCart}
+            handleUpdateCartQty={handleUpdateCartQty}
+          />
+        </div> */}
         {/* Customer Bar */}
         <div className="bg-black flex justify-evenly w-[250px] text-white bg-contain bg-no-repeat absolute z-30 mt-5 lg:mt-0 right-5 lg:right-auto">
-          <div className={activeCart ? '' : 'hidden'} >
-            <Cart
-              cart={cart}
-              handleEmptyCart={handleEmptyCart}
-              handleRemoveFromCart={handleRemoveFromCart}
-              handleUpdateCartQty={handleUpdateCartQty}
-            />
-          </div>
           <div className='flex text-lg font-tabloid'>
             <button className='pr-5 hover:text-blue-600'>Account</button>
             <button className='hover:text-blue-600'>Sign-Out</button>
@@ -86,6 +85,14 @@ const App = () => {
                   <ShoppingCart />
                 </Badge>
               </IconButton>
+            </div>
+            <div className={activeCart ? '' : 'hidden'} >
+              <Cart
+                cart={cart}
+                handleEmptyCart={handleEmptyCart}
+                handleRemoveFromCart={handleRemoveFromCart}
+                handleUpdateCartQty={handleUpdateCartQty}
+              />
             </div>
           </div>
         </div>
