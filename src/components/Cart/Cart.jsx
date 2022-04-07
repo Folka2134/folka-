@@ -10,7 +10,7 @@ import { CgEnter } from 'react-icons/cg'
 export const Cart = ({ cart, handleEmptyCart, handleRemoveFromCart, handleUpdateCartQty }) => {
 
   const EmptyCart = () => (
-    <Typography variant='subtitle1' className='text-red-500 text-center pt-2'>You have no items in your shopping cart</Typography>
+    <Typography variant='subtitle1' className='text-red-500 text-center pt-2'>Cart Empty</Typography>
   )
 
   const FilledCart = () => (
