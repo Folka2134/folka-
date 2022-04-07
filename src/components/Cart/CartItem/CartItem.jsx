@@ -11,7 +11,7 @@ export const CartItem = ({ item, handleRemoveFromCart, handleUpdateCartQty }) =>
         <Typography>{item.name}</Typography>
         <Typography>{item.line_total.formatted_with_symbol}</Typography>
       </CardContent>
-      <CardActions className="flex justify-between">
+      <CardActions className="flex justify-between mt-0">
         <div className='flex items-center'>
           <Button type="button" size="small" onClick={() => handleUpdateCartQty(item.id, item.quantity - 1)}>-</Button>
           <Typography>{item.quantity}</Typography>

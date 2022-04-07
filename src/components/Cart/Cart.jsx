@@ -14,17 +14,19 @@ export const Cart = ({ cart, handleEmptyCart, handleRemoveFromCart, handleUpdate
   )
 
   const FilledCart = () => (
-    <div className='h-[400px] lg:h-[500px] overflow-y-auto'>
-      <Grid container spacing={2} className="flex-col justify-center pt-6">
-        {cart.line_items.map((item) => (
-          <Grid item key={item.id}>
-            <CartItem item={item} handleUpdateCartQty={handleUpdateCartQty} handleRemoveFromCart={handleRemoveFromCart} />
-          </Grid>
-        ))}
-      </Grid>
+    <div className='h-[500px] lg:h-[700px]'>
+      <div className='h-[400px] lg:h-[600px] overflow-y-scroll overflow-x-hidden'>
+        <Grid container spacing={2} className="flex justify-center pt-6">
+          {cart.line_items.map((item) => (
+            <Grid item key={item.id}>
+              <CartItem item={item} handleUpdateCartQty={handleUpdateCartQty} handleRemoveFromCart={handleRemoveFromCart} />
+            </Grid>
+          ))}
+        </Grid>
+      </div>
       <div className='flex-col mt-[10%] w-full justify-center'>
-        <Typography className="text-right">
-          Subtotal {cart.subtotal.formatted_with_symbol}
+        <Typography className="text-center">
+          Subtotal: {cart.subtotal.formatted_with_symbol}
         </Typography>
         <div className='flex justify-evenly m-2'>
           <Button className='min-w-[150px]' size="large" type="button" variant="contained"><ImBin onClick={handleEmptyCart} /></Button>
@@ -39,7 +41,7 @@ export const Cart = ({ cart, handleEmptyCart, handleRemoveFromCart, handleUpdate
   return (
     <div className='font-tabloid mt-12 -ml-[217.5px] absolute bg-black w-[250px]'>
       {/* <div className='h-full' /> */}
-      <Typography className='pt-2 text-center text-white' > Your Shopping Cart</Typography>
+      <Typography className='py-2 text-center text-white' > Your Shopping Cart</Typography>
       {!cart.total_items ? <EmptyCart /> : <FilledCart />
       }
     </div>
