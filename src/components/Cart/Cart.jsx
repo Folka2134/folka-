@@ -1,11 +1,14 @@
 import React from 'react'
 
-import { CartItem } from './CartItem/CartItem'
+import { Link } from 'react-router-dom'
 
 import { Container, Typography, Button, Grid } from '@material-ui/core'
 
 import { ImBin } from 'react-icons/im'
 import { CgEnter } from 'react-icons/cg'
+
+import { CartItem } from './CartItem/CartItem'
+
 
 export const Cart = ({ cart, handleEmptyCart, handleRemoveFromCart, handleUpdateCartQty }) => {
 
@@ -30,7 +33,7 @@ export const Cart = ({ cart, handleEmptyCart, handleRemoveFromCart, handleUpdate
         </Typography>
         <div className='flex justify-evenly m-2'>
           <Button className='min-w-[150px]' size="large" type="button" variant="contained"><ImBin onClick={handleEmptyCart} /></Button>
-          <Button className='min-w-[150px]' size="large" type="button" variant="contained"><CgEnter /></Button>
+          <Button component={Link} to='/checkout' className='min-w-[150px]' size="large" type="button" variant="contained"><CgEnter /></Button>
         </div>
       </div>
     </div>

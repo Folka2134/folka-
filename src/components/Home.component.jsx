@@ -1,7 +1,6 @@
 import React from 'react'
-import { Carousell } from './Carousel'
 
-// import { Cover } from './Cover.component'
+import { Carousell } from './Carousel'
 import { Nav } from './Nav.component'
 import { Products } from './Product/Products.component'
 
