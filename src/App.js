@@ -111,7 +111,7 @@ const App = () => {
             <div className="flex flex-col bg-main bg-cover bg-fixed overflow-y-auto paragraph">
               <Routes>
                 <Route path='/' element={<Home products={products} handleAddToCart={handleAddToCart} />} />
-                <Route path='/checkout' element={<Checkout />} />
+                <Route path='/checkout' element={<Checkout cart={cart} />} />
               </Routes>
             </div>
           </div>
