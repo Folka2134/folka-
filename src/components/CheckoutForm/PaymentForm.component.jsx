@@ -45,7 +45,6 @@ export const PaymentForm = ({ checkoutToken, shippingData, backStep, handleCaptu
       handleCaptureCheckout(checkoutToken.id, orderData)
       nextStep()
     }
-
   }
 
   return (
