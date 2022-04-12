@@ -12,6 +12,7 @@ const steps = ['Shipping address', 'Payment details']
 export const Checkout = ({ cart }) => {
   const [activeStep, setActiveStep] = useState(0)
   const [checkoutToken, setCheckoutToken] = useState(null)
+  const [shippingData, setShippingData] = useState({})
 
   useEffect(() => {
     const generateToken = async () => {
@@ -25,9 +26,17 @@ export const Checkout = ({ cart }) => {
     generateToken()
   }, [cart])
 
+  const nextStep = () => setActiveStep((prevStep) => prevStep + 1)
+  const backStep = () => setActiveStep((prevStep) => prevStep - 1)
+
+  const next = (data) => {
+    setShippingData(data)
+    nextStep()
+  }
+
   const Form = () => activeStep === 0
-    ? <AddressForm checkoutToken={checkoutToken} />
-    : <PaymentForm />
+    ? <AddressForm checkoutToken={checkoutToken} next={next} />
+    : <PaymentForm shippingData={shippingData} checkoutToken={checkoutToken} />
 
   return (
     <div className='h-screen min-w-[250px] lg:w-full lg:px-12'>

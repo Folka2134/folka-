@@ -8,7 +8,7 @@ import { commerce } from '../../lib/commerce'
 
 import { FormInput } from './FormInput.component'
 
-export const AddressForm = ({ checkoutToken }) => {
+export const AddressForm = ({ checkoutToken, next }) => {
   const [shippingCountries, setShippingContries] = useState([])
   const [shippingCountry, setShippingCountry] = useState('')
   const [shippingSubdivisions, setShippingSubdivisions] = useState([])
@@ -63,7 +63,7 @@ export const AddressForm = ({ checkoutToken }) => {
     <>
       <Typography variant="h6" gutterBottom>Shipping Address</Typography>
       <FormProvider {...methods}>
-        <form onSubmit={submit}>
+        <form onSubmit={methods.handleSubmit((data) => next({ ...data, shippingCountry, shippingSubdivision, shippingOption }))}>
           <Grid container spacing={3}>
             <FormInput name='firstName' label='First name' />
             <FormInput name='lastName' label='Last name' />
