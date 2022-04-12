@@ -14,10 +14,7 @@ export const Review = ({ checkoutToken }) => {
           </ListItem>
         ))}
         <ListItem className='p-[10px]'>
-          <ListItemText primary='Total' />
-          <Typography variant='subtitle1' className='font-bold'>
-            {checkoutToken.live.subtotal.formatted_with_symbol}
-          </Typography>
+          <ListItemText primary='Total' secondary={checkoutToken.live.subtotal.formatted_with_symbol} />
         </ListItem>
       </List>
     </div>
