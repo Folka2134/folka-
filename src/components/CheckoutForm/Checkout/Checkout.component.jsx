@@ -36,10 +36,10 @@ export const Checkout = ({ cart }) => {
 
   const Form = () => activeStep === 0
     ? <AddressForm checkoutToken={checkoutToken} next={next} />
-    : <PaymentForm shippingData={shippingData} checkoutToken={checkoutToken} />
+    : <PaymentForm shippingData={shippingData} checkoutToken={checkoutToken} backStep={backStep} />
 
   return (
-    <div className='h-screen min-w-[250px] lg:w-full lg:px-12'>
+    <div className='h-screen min-w-[250px] lg:w-full lg:px-12 flex justify-center'>
       <div />
       <main className='mt-[5%] w-auto mx-2' >
         <Paper className='mx-3 p-2'>
