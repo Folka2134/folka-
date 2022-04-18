@@ -36,7 +36,7 @@ export const Checkout = ({ cart, order, handleCaptureCheckout, error }) => {
 
   const Form = () => activeStep === 0
     ? <AddressForm checkoutToken={checkoutToken} next={next} />
-    : <PaymentForm shippingData={shippingData} checkoutToken={checkoutToken} backStep={backStep} handleCaptureCheckout={handleCaptureCheckout} nextStep={nextStep} />
+    : <PaymentForm shippingData={shippingData} checkoutToken={checkoutToken} backStep={backStep} onCaptureCheckout={handleCaptureCheckout} nextStep={nextStep} />
 
   return (
     <div className='h-screen min-w-[250px] lg:w-full lg:px-12 flex justify-center'>
